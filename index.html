@@ -41,19 +41,19 @@
             <article>
               <div class="mb-4">
                 <h5 class="fw-bold">Memory</h5>
-                <button type="button" class="btn btn-outline-dark">8GB unified Memory</button>
-                <button type="button" class="btn btn-outline-dark">16GB unified Memory</button>
+                <button id="first-memory" type="button" class="btn btn-outline-dark">8GB unified Memory</button>
+                <button id="second-memory" type="button" class="btn btn-outline-dark">16GB unified Memory</button>
               </div>
               <div class="mb-4">
                 <h5 class="fw-bold">Storage</h5>
-                <button type="button" class="btn btn-outline-dark">256GB SSD storage</button>
-                <button type="button" class="btn btn-outline-dark">512GB SSD storage</button>
-                <button type="button" class="btn btn-outline-dark">1TB SSD storage</button>
+                <button id="first-ssd" type="button" class="btn btn-outline-dark">256GB SSD storage</button>
+                <button id="second-ssd" type="button" class="btn btn-outline-dark">512GB SSD storage</button>
+                <button id="third-ssd" type="button" class="btn btn-outline-dark">1TB SSD storage</button>
               </div>
               <div class="mb-4">
                 <h5 class="fw-bold">Choose your delivery option</h5>
-                <button type="button" class="btn btn-outline-dark">Friday, Aug 25 prime Delivery</button>
-                <button type="button" class="btn btn-outline-dark">Friday, Aug 21 Delivery charge $20</button>
+                <button id="normal-delivery" type="button" class="btn btn-outline-dark">Friday, Aug 25 prime Delivery</button>
+                <button id="advance-delivery" type="button" class="btn btn-outline-dark">Friday, Aug 21 Delivery charge $20</button>
               </div>
             </article>
             <!-- Amount list -->
@@ -65,35 +65,43 @@
                 </tr>
                 <tr>
                   <td>Extra Memory Cost</td>
-                  <td>$0</td>
+                  <td>$<span id="memory-cost">0</span></td>
                 </tr>
                 <tr>
                   <td>Extra Storage Cost</td>
-                  <td>$0</td>
+                  <td>$<span id="storage-cost">0</span></td>
                 </tr>
                 <tr>
                   <td>Delivery Charge</td>
-                  <td>$0</td>
+                  <td>$<span id="delivery-cost">0</span></td>
                 </tr>
               </tbody>
               <tbody>
                 <tr>
                   <td>Total Price</td>
-                  <td>$1299</td>
+                  <td>$<span id="total-cost">1299</span></td>
                 </tr>
               </tbody>
             </table>
             <!-- promo code filed -->
             <p class="fw-bold text-success">Add promo code</p>
             <div class="input-group w-50 mb-2">
-              <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" />
-              <button class="btn btn-outline-success fw-bold" type="button" id="button-addon1">Apply</button>
+              <input
+                id="promo -input"
+                type="text"
+                class="form-control"
+                placeholder=""
+                aria-label="Example text with button addon"
+                aria-describedby="button-addon1"
+              />
+              <button id="promo-apply" class="btn btn-outline-success fw-bold" type="button" id="button-addon1">Apply</button>
             </div>
           </div>
         </div>
         <hr />
-        <h1 class="text-center fw-bold">Total: $1299</h1>
+        <h1 class="text-center fw-bold">Total: $<span id="discount-total">1299</span></h1>
       </section>
     </main>
+    <script src="js/main.js"></script>
   </body>
 </html>
