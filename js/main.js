@@ -7,11 +7,11 @@ const memoryCostField = document.getElementById('memory-cost');
 
 // Memory btn event handler
 document.getElementById('first-memory').addEventListener('click', function(){
-    memoryCostField.innerText = '0';
+    memoryCostField.innerText = 0;
     updateTotal();
 })
 document.getElementById('second-memory').addEventListener('click', function(){
-    memoryCostField.innerText = '180';
+    memoryCostField.innerText = 180;
     updateTotal();
 })
 
@@ -25,15 +25,15 @@ const storageCostFlied = document.getElementById('storage-cost');
 
 // Storage btn event handler
 firstSsd.addEventListener('click', function(){
-    storageCostFlied.innerText = '0';
+    storageCostFlied.innerText = 0;
     updateTotal();
 })
 secondSsd.addEventListener('click', function(){
-    storageCostFlied.innerText = '100';
+    storageCostFlied.innerText = 100;
     updateTotal();
 })
 thirdSsd.addEventListener('click', function(){
-    storageCostFlied.innerText = '180';
+    storageCostFlied.innerText = 180;
     updateTotal();
 })
 
@@ -46,11 +46,11 @@ const deliveryCostFlied = document.getElementById('delivery-cost');
 
 // Delivery option event handler
 normalDelivery.addEventListener('click', function(){
-    deliveryCostFlied.innerText = '0';
+    deliveryCostFlied.innerText = 0;
     updateTotal();
 })
 advanceDelivery.addEventListener('click', function(){
-    deliveryCostFlied.innerText = '20';
+    deliveryCostFlied.innerText = 20;
     updateTotal();
 })
 
@@ -64,19 +64,27 @@ function updateTotal(){
     const deliveryCharge = Number(deliveryCostFlied.innerText);
     const grandTotal = 1299 + memoryPrice + storagePrice + deliveryCharge;
     total.innerText = grandTotal;
-    // discountTotal.innerText = grandTotal;
+    document.getElementById('discount-total').innerText = grandTotal;
 }
 // promo Code apply btn
 const promoApply = document.getElementById('promo-apply');
-
+// promoApply.addEventListener('click', function(){
+//     const promoInputField = document.getElementById('promo-input');
+//     const promoCodeValue = promoInputField.value;
+//     const discountTotalField = document.getElementById('discount-total');
+//     const grandTotal = discountTotalField.innerText;
+//     if(promoCodeValue.toLowerCase() == 'stevekaku'){
+//         discountTotalField.innerText= grandTotal - (grandTotal * 0.2);
+//         promoInputField.value = '';
+//     }
+// })
 promoApply.addEventListener('click', function(){
-    const promoInputField = document.getElementById('promo -input');
+    const promoInputField = document.getElementById('promo-input');
     const promoCodeValue = promoInputField.value;
     const discountTotalField = document.getElementById('discount-total');
-    // const discountTotal = discountTotalField.innerText;
-    const grandTotal = total.innerText;
-    if(promoCodeValue == 'stevekaku'.toLowerCase()){
-        discountTotalField.innerText= grandTotal - (grandTotal * 0.2);
-        promoInputField.value = '';
+    const grandTotal = discountTotalField.innerText;
+    if(promoCodeValue.toLowerCase() == 'stevekaku'){
+        discountTotalField.innerText = grandTotal - (grandTotal * 0.2);
+        promoInputField.value ='';
     }
 })
