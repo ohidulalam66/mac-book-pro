@@ -6,11 +6,11 @@ const sixteenGbMemory = document.getElementById('second-memory');
 const memoryCostField = document.getElementById('memory-cost');
 
 // Memory btn event handler
-eightGbMemory.addEventListener('click', function(){
+document.getElementById('first-memory').addEventListener('click', function(){
     memoryCostField.innerText = '0';
     updateTotal();
 })
-sixteenGbMemory.addEventListener('click', function(){
+document.getElementById('second-memory').addEventListener('click', function(){
     memoryCostField.innerText = '180';
     updateTotal();
 })
@@ -57,8 +57,6 @@ advanceDelivery.addEventListener('click', function(){
 // Total price flied id
 const total = document.getElementById('total-cost');
 
-// Discount Total id
-const discountTotal = document.getElementById('discount-total');
 // Update total
 function updateTotal(){
     const memoryPrice = Number(memoryCostField.innerText);
@@ -66,21 +64,19 @@ function updateTotal(){
     const deliveryCharge = Number(deliveryCostFlied.innerText);
     const grandTotal = 1299 + memoryPrice + storagePrice + deliveryCharge;
     total.innerText = grandTotal;
-    discountTotal.innerText = grandTotal;
+    // discountTotal.innerText = grandTotal;
 }
-
-// Promo Code input filed 
-const promoFlied = document.getElementById('promo -input');
-
 // promo Code apply btn
 const promoApply = document.getElementById('promo-apply');
 
-// Promo code event handler
-promoApply.addEventListener('click', function(event){
-    const promoCode = promoFlied.value;
-    if(event.target.value == 'stevekaku'){
-        const discountTotal = total / 20;
+promoApply.addEventListener('click', function(){
+    const promoInputField = document.getElementById('promo -input');
+    const promoCodeValue = promoInputField.value;
+    const discountTotalField = document.getElementById('discount-total');
+    // const discountTotal = discountTotalField.innerText;
+    const grandTotal = total.innerText;
+    if(promoCodeValue == 'stevekaku'.toLowerCase()){
+        discountTotalField.innerText= grandTotal - (grandTotal * 0.2);
+        promoInputField.value = '';
     }
-    promoFlied.value ='';
-    return discountTotal;
 })
