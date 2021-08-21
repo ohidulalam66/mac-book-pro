@@ -68,16 +68,8 @@ function updateTotal(){
 }
 // promo Code apply btn
 const promoApply = document.getElementById('promo-apply');
-// promoApply.addEventListener('click', function(){
-//     const promoInputField = document.getElementById('promo-input');
-//     const promoCodeValue = promoInputField.value;
-//     const discountTotalField = document.getElementById('discount-total');
-//     const grandTotal = discountTotalField.innerText;
-//     if(promoCodeValue.toLowerCase() == 'stevekaku'){
-//         discountTotalField.innerText= grandTotal - (grandTotal * 0.2);
-//         promoInputField.value = '';
-//     }
-// })
+
+// promo code event handler
 promoApply.addEventListener('click', function(){
     const promoInputField = document.getElementById('promo-input');
     const promoCodeValue = promoInputField.value;
